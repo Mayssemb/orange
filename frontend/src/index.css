@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Orange Design System - Based on system.design.orange.com */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    /* Orange Brand Colors */
+    --orange-brand: 27 100% 50%; /* #FF7900 */
+    --orange-light: 27 100% 95%; /* Light orange tint */
+    --orange-dark: 27 100% 40%; /* Darker orange for hover */
+    
+    /* Neutral Colors - Orange DS */
+    --black: 0 0% 0%;
+    --white: 0 0% 100%;
+    --gray-100: 0 0% 97%;
+    --gray-200: 0 0% 93%;
+    --gray-300: 0 0% 80%;
+    --gray-400: 0 0% 60%;
+    --gray-500: 0 0% 40%;
+    --gray-600: 0 0% 30%;
+    --gray-700: 0 0% 20%;
+    
+    /* Functional Colors */
+    --success: 145 63% 42%;
+    --success-light: 145 63% 95%;
+    --warning: 45 100% 51%;
+    --warning-light: 45 100% 95%;
+    --error: 0 84% 60%;
+    --error-light: 0 84% 95%;
+    --info: 210 100% 50%;
+    --info-light: 210 100% 95%;
+    
+    /* Semantic Tokens */
+    --background: var(--white);
+    --foreground: var(--black);
+    
+    --card: var(--white);
+    --card-foreground: var(--black);
+    
+    --popover: var(--white);
+    --popover-foreground: var(--black);
+    
+    --primary: var(--orange-brand);
+    --primary-foreground: var(--white);
+    
+    --secondary: var(--gray-100);
+    --secondary-foreground: var(--black);
+    
+    --muted: var(--gray-100);
+    --muted-foreground: var(--gray-500);
+    
+    --accent: var(--orange-light);
+    --accent-foreground: var(--orange-brand);
+    
+    --destructive: var(--error);
+    --destructive-foreground: var(--white);
+    
+    --border: var(--gray-200);
+    --input: var(--gray-200);
+    --ring: var(--orange-brand);
+    
+    --radius: 0.25rem;
+    
+    /* Header */
+    --header-bg: var(--black);
+    --header-foreground: var(--white);
+    
+    /* Sidebar */
+    --sidebar-background: var(--white);
+    --sidebar-foreground: var(--black);
+    --sidebar-primary: var(--orange-brand);
+    --sidebar-primary-foreground: var(--white);
+    --sidebar-accent: var(--gray-100);
+    --sidebar-accent-foreground: var(--black);
+    --sidebar-border: var(--gray-200);
+    --sidebar-ring: var(--orange-brand);
+  }
+
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 98%;
+    
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 98%;
+    
+    --primary: var(--orange-brand);
+    --primary-foreground: var(--white);
+    
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+    
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+    
+    --accent: 0 0% 15%;
+    --accent-foreground: var(--orange-brand);
+    
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: var(--orange-brand);
+    
+    --sidebar-background: 0 0% 7%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: var(--orange-brand);
+    --sidebar-primary-foreground: var(--white);
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: var(--orange-brand);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .orange-header {
+    @apply bg-header text-header-foreground;
+  }
+  
+  .status-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-sm text-sm font-medium;
+  }
+  
+  .status-pending {
+    @apply bg-warning/10 text-yellow-700 border border-warning/30;
+  }
+  
+  .status-approved {
+    @apply bg-success/10 text-green-700 border border-success/30;
+  }
+  
+  .status-rejected {
+    @apply bg-error/10 text-red-700 border border-error/30;
+  }
+  
+  .card-orange {
+    @apply bg-card border border-border rounded-sm shadow-sm hover:shadow-md transition-shadow;
+  }
+}
