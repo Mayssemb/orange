@@ -1,4 +1,4 @@
-import { Controller, Post, Get, Body, Req, UseGuards, Param, ParseIntPipe, Patch } from '@nestjs/common';
+import { Controller, Post, Get, Body, Req, UseGuards, Param, ParseIntPipe, Patch, Delete } from '@nestjs/common';
 import { RolesGuard } from '../common/guards/roles.guard';
 import { Roles } from '../common/decorators/roles.decorator';
 import { Role } from '../common/enums/role.enum';
@@ -40,6 +40,9 @@ updateOwner(
 ) {
   return this.service.updateOwner(id, teamLeadId);
 }
+@Delete(':id')
+delete(@Param('id', ParseIntPipe) id: number) {
+  return this.service.delete(id); 
 
-
+}
 }

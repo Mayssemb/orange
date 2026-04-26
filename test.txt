@@ -1,0 +1,42 @@
+curl -X POST http://localhost:8000/rank \
+  -H "Content-Type: application/json" \
+  -d '{
+    "offer": {
+      "offer_id": "off-01",
+      "required_skills": ["Python", "Machine Learning"],
+      "min_experience": 0.5,
+      "required_education": "engineer",
+      "preferred_universities": ["ENIT", "INSAT", "ESPRIT"],
+      "required_speciality": "Data Science",
+      "weights": {"university": 0.30, "diploma": 0.25, "speciality": 0.25, "skills": 0.15, "experience": 0.05}
+    },
+    "candidates": [
+      {
+        "candidate_id": "c-01",
+        "skills": ["Python", "Deep Learning"],
+        "experience_years": 1.0,
+        "education_level": "engineer",
+        "university": "ENIT",
+        "speciality": "Data Science",
+        "languages": ["French", "English"]
+      },
+      {
+        "candidate_id": "c-02",
+        "skills": ["Java", "Spring Boot"],
+        "experience_years": 2.0,
+        "education_level": "master",
+        "university": "FST",
+        "speciality": "Software Engineering",
+        "languages": ["French"]
+      },
+      {
+        "candidate_id": "c-03",
+        "skills": ["Python", "Machine Learning", "Docker"],
+        "experience_years": 0.5,
+        "education_level": "master",
+        "university": "INSAT",
+        "speciality": "Artificial Intelligence",
+        "languages": ["French", "English", "Arabic"]
+      }
+    ]
+  }'

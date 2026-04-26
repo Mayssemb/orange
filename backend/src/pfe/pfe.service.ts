@@ -40,5 +40,12 @@ async updateOwner(id: number, teamLeadId: number) {
   await this.repo.update(id, { teamLead: user });
   return this.repo.findOne({ where: { id }, relations: ['teamLead'] });
 }
+async delete(id: number) {
+  const result = await this.repo.delete(id);
+  if (result.affected === 0) {
+    throw new NotFoundException(`PFE with id ${id} not found`);
+  }
+  return { message: 'PFE deleted successfully' }; 
 
+}
 }

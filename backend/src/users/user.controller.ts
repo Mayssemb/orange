@@ -5,7 +5,8 @@ import {
   Param,
   Body,
   Query,
-  Patch
+  Patch,
+  Delete
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 
@@ -16,9 +17,10 @@ export class UsersController {
   // POST /users
   @Post()
   create(@Body() body: any) {
-    if (!body.email.endsWith('@orange.com')) {
-    throw new Error('Email must end with @orange.com');
-  }
+  //   if (!body.email.endsWith('@orange.tn')) {
+  //   throw new Error('Email must end with @orange.tn');
+  // }
+  
     return this.usersService.create(body);
   }
 
@@ -47,4 +49,8 @@ export class UsersController {
   updatePassword(@Param('id') id: string, @Body('password') password: string) {
     return this.usersService.updatePassword(parseInt(id), password);
   } 
+  @Delete(':id')
+  delete(@Param('id') id: string) {
+    return this.usersService.delete(parseInt(id));
+  }
 }

@@ -11,7 +11,7 @@ class CandidateProfile(BaseModel):
     languages: Optional[List[str]] = []
 
 class OfferRequirements(BaseModel):
-    offer_id: str
+    offer_id: str = None
     required_skills: List[str]
     min_experience: float
     required_education: str
