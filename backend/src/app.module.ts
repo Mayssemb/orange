@@ -6,15 +6,15 @@ import { PfeModule } from './pfe/pfe.module';
 import { SeedController } from './seed/seed.controller';
 import { SeedService } from './seed/seed.service';
 import * as dotenv from 'dotenv';
-dotenv.config();
-import { CandidateModule } from './candidates/candidate.module';
+import { CandidateModule } from './recruitment/candidates/candidate.module';
 import { ConfigModule } from '@nestjs/config/dist/config.module';
 import { CandidateController } from './seed/candidate_seed.controller';
 import { CandidateSeedService } from './seed/candidate_seed.service';
 import { Pfe } from './pfe/pfe.entity';
-import { Candidate } from './candidates/candidate.entity';
+import { Candidate } from './recruitment/candidates/candidate.entity';
 
 
+dotenv.config();
 
 @Module({
   imports: [

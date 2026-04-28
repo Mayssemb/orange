@@ -5,33 +5,33 @@ import { Status } from '../common/enums/status.enum';
 @Entity()
 export class Pfe {
   @PrimaryGeneratedColumn()
-  id: number;
+  id!: number;
 
   @Column()
-  title: string;
+  title!: string;
 
   @Column()
-  description: string;
+  description!: string;
 
   @Column()
-  duration: number; 
+  duration!: number; 
 
   @Column()
-  number_of_interns: number;
+  number_of_interns!: number;
 
   @Column('simple-array') 
-  technologies: string[]
+  technologies!: string[];
 
   @Column()
-  diploma: string;
+  diploma!: string;
 
   @Column(
     { type: 'enum', enum: Status, default: Status.PENDING }, )
-  status: Status;
+  status!: Status;
   
   @Column()
-  direction: string;
+  direction!: string;
 
   @ManyToOne(() => User, { eager: true })
-  teamLead: User;
+  teamLead!: User;
 }

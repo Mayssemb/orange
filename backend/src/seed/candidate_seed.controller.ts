@@ -8,7 +8,7 @@ import {
 import { FileInterceptor } from '@nestjs/platform-express';
 import { Express } from 'express';
 import * as multer from 'multer';
-import { CandidateService } from '../candidates/candidate.service';
+import { CandidateService } from '../recruitment/candidates/candidate.service';
 import { CandidateSeedService } from './candidate_seed.service';
 
 @Controller('candidate')
@@ -25,6 +25,9 @@ export class CandidateController {
     @Body('choices') choices: string,
     @Body('name') name: string,
     @Body('email') email: string,
+    @Body('university') university: string,
+    @Body('phone') phone?: string,
+    @Body('status') status?: string,
   ) {
     let parsedPfeIds: number[];
 
@@ -39,6 +42,9 @@ export class CandidateController {
       parsedPfeIds,
       name,
       email,
+      university,
+      phone,
+      status,
     );
   }
 

@@ -5,16 +5,16 @@ import { Role } from '../common/enums/role.enum';
 @Entity()
 export class User {
   @PrimaryGeneratedColumn()
-  id: number;
+  id!: number;
 
   @Column()
-  name: string;
+  name!: string;
 
   @Column({ unique: true })
-  email: string;
+  email!: string;
 
   @Column()
-  password: string;
+  password!: string;
   
 
   @Column({
@@ -22,8 +22,8 @@ export class User {
     enum: Role,
     default: Role.TEAM_LEAD,
   })
-  role: Role;
+  role!: Role;
 
   @Column()
-  department: string;
+  department!: string;
 }

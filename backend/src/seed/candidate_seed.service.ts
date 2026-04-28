@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Candidate } from '../candidates/candidate.entity';
+import { Candidate } from '../recruitment/candidates/candidate.entity';
 import { Pfe } from '../pfe/pfe.entity';
 import cloudinary from '../config/cloudinary.config';
 import * as fs from 'fs';

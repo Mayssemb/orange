@@ -1,0 +1,6 @@
+export enum CandidateStatus {
+  PENDING = 'PENDING',
+  APPROVED = 'APPROVED',
+  REJECTED = 'REJECTED',
+  EVALUATED = 'EVALUATED',
+}
